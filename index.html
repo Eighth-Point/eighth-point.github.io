@@ -44,11 +44,16 @@
   .hero { padding-top: 40px; padding-bottom: 72px; }
   .word { margin: 16px 0 0; font: 400 min(12.6vw, 181px)/0.84 "Archivo Black", Archivo, sans-serif; letter-spacing: -0.045em; text-transform: uppercase; white-space: nowrap; }
   .word span { display: inline; }
-  .under { margin-top: 48px; display: grid; grid-template-columns: 1fr 360px; gap: 64px; align-items: end; }
+  .under { margin-top: 48px; display: grid; grid-template-columns: 1fr 400px; gap: 64px; align-items: end; }
   .lede { margin: 0; font: 700 34px/1.18 Archivo, sans-serif; letter-spacing: -0.01em; max-width: 24ch; }
   .lede em { font-style: normal; color: var(--ash); }
   .get { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
   .free { margin: 0; font: 700 13px/16px Archivo, sans-serif; color: var(--muted); }
+  /* The App Store link as a QR code, for a desktop visitor to scan with their iPhone; a phone taps the badge, so it hides below 860. */
+  .dl { display: flex; align-items: center; gap: 24px; }
+  .qr { display: flex; align-items: center; gap: 14px; margin: 0; }
+  .qr img { display: block; width: 104px; height: 104px; border-radius: 8px; }
+  .qr figcaption { max-width: 9ch; font: 700 13px/16px Archivo, sans-serif; color: var(--ash); }
 
   /* Apple's official black "Download on the App Store" badge (assets/app-store-badge.svg, 119.66 x 40), unaltered. */
   .badge { display: inline-block; width: 180px; line-height: 0; }
@@ -108,6 +113,7 @@
     .close { padding: 48px 0; }
     .close h2 { font-size: 40px; }
     .links { flex-direction: column; gap: 12px; }
+    .qr { display: none; }
   }
 </style>
 </head>
@@ -123,7 +129,10 @@
   <div class="under">
     <p class="lede">A companion for in-person play. <em>Keep score at the table, save the match in seconds, and see how your Legends really perform.</em></p>
     <div class="get">
-      <a class="badge" href="https://apps.apple.com/app/id6829878445"><img src="assets/app-store-badge.svg" width="180" height="60" alt="Download on the App Store"></a>
+      <div class="dl">
+        <a class="badge" href="https://apps.apple.com/app/id6829878445"><img src="assets/app-store-badge.svg" width="180" height="60" alt="Download on the App Store"></a>
+        <figure class="qr"><img src="assets/app-store-qr.svg" width="104" height="104" alt="QR code that opens Eighth Point on the App Store"><figcaption>Or scan with your iPhone</figcaption></figure>
+      </div>
       <p class="free">Free, nothing locked. No ads, no subscription, no purchases.</p>
     </div>
   </div>
